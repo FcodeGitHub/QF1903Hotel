@@ -9,4 +9,7 @@ public class HotelController {
     @Autowired
     HotelService hotelService;
 
+    public String list(){
+        return null;
+    }
 }
