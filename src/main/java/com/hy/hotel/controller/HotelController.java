@@ -12,4 +12,8 @@ public class HotelController {
     public String list(){
         return null;
     }
+
+    public String showList(){
+        return  null;
+    }
 }
