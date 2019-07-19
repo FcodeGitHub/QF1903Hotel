@@ -19,4 +19,9 @@ public interface UserMapper {
      * 注册
      */
     int insertUser(UserLogin userLogin);
+
+    /**
+     * 通过用户名查询
+     */
+    UserLogin selectUserByAccount(String account);
 }
