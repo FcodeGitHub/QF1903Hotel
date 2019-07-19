@@ -22,6 +22,9 @@ public class UserController {
     @RequestMapping("/login")
     @ResponseBody
     public DataResult login (UserLogin userLogin, HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
         // 登录
         // 验证登录是否正确跳转页面
         return userService.login(userLogin);
@@ -32,7 +35,11 @@ public class UserController {
      */
     @RequestMapping("/insertUser")
     @ResponseBody
-    public String insertUser(UserLogin userLogin) {
+    public String insertUser(UserLogin userLogin,HttpServletResponse response) {
+
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
         boolean result = userService.insertUser(userLogin);
         if (result) {
             return "success";
@@ -46,7 +53,11 @@ public class UserController {
      */
     @RequestMapping("updatePassword")
     @ResponseBody
-    public String updatePassword(UserLogin userLogin) {
+    public String updatePassword(UserLogin userLogin,HttpServletResponse response) {
+
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
         boolean result = userService.updatePassword(userLogin);
         if (result) {
             return "success";
