@@ -45,16 +45,12 @@ public class UserController {
      */
     @RequestMapping("updatePassword")
     @ResponseBody
-    public String updatePassword(UserLogin userLogin,HttpServletResponse response) {
+    public DataResult updatePassword(UserLogin userLogin,HttpServletResponse response) {
 
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
 
-        boolean result = userService.updatePassword(userLogin);
-        if (result) {
-            return "success";
-        } else {
-            return "fail";
-        }
+        return userService.updatePassword(userLogin);
+
     }
 }
