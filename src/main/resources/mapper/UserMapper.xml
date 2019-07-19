@@ -15,4 +15,8 @@
         insert into user_login (account, password, phone)
         values (#{account}, #{password}, #{phone})
     </insert>
+
+    <select id="selectUserByAccount" parameterType="String" resultType="UserLogin">
+        select id,account,phone from user_login where account = #{account}
+    </select>
 </mapper>

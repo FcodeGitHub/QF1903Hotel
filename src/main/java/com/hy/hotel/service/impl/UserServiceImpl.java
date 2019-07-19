@@ -1,6 +1,7 @@
 package com.hy.hotel.service.impl;
 
 import com.hy.hotel.mapper.UserMapper;
+import com.hy.hotel.pojo.DataResult;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,14 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     @Override
-    public boolean login(UserLogin userLogin) {
-        return userMapper.login(userLogin) > 0 ? true : false;
+    public DataResult login(UserLogin userLogin) {
+        int result = userMapper.login(userLogin);
+        UserLogin userLogin1 = userMapper.selectUserByAccount(userLogin.getAccount());
+        if (result > 0) {
+            return new DataResult(result,"登陆成功",userLogin1);
+        } else {
+            return new DataResult(result,"登陆失败");
+        }
     }
 
     @Override

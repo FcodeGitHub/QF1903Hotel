@@ -1,12 +1,13 @@
 package com.hy.hotel.service;
 
+import com.hy.hotel.pojo.DataResult;
 import com.hy.hotel.pojo.UserLogin;
 
 public interface UserService {
     /**
      * 登录
      */
-    boolean login(UserLogin userLogin);
+    DataResult login(UserLogin userLogin);
 
     /**
      * 修改密码

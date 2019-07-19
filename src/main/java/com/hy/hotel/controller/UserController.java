@@ -1,5 +1,6 @@
 package com.hy.hotel.controller;
 
+import com.hy.hotel.pojo.DataResult;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +21,10 @@ public class UserController {
      */
     @RequestMapping("/login")
     @ResponseBody
-    public String login (UserLogin userLogin, HttpServletResponse response) {
+    public DataResult login (UserLogin userLogin, HttpServletResponse response) {
         // 登录
-        boolean result = userService.login(userLogin);
         // 验证登录是否正确跳转页面
-        if (result) {
-            return "success";
-        } else {
-            return "fail";
-        }
+        return userService.login(userLogin);
     }
 
     /**
