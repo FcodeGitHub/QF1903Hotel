@@ -17,5 +17,5 @@ public interface UserService {
     /**
      * 注册
      */
-    boolean insertUser(UserLogin userLogin);
+    DataResult insertUser(UserLogin userLogin);
 }
