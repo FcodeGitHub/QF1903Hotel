@@ -7,10 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 
-@Controller
+@RestController
 public class UserController {
 
     @Autowired
@@ -20,7 +21,6 @@ public class UserController {
      * 登录
      */
     @RequestMapping("/login")
-    @ResponseBody
     public DataResult login (UserLogin userLogin, HttpServletResponse response) {
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
@@ -33,7 +33,6 @@ public class UserController {
      * 注册
      */
     @RequestMapping("/insertUser")
-    @ResponseBody
     public DataResult insertUser(UserLogin userLogin,HttpServletResponse response) {
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
@@ -44,7 +43,6 @@ public class UserController {
      * 修改密码
      */
     @RequestMapping("updatePassword")
-    @ResponseBody
     public DataResult updatePassword(UserLogin userLogin,HttpServletResponse response) {
 
         //解决跨域问题

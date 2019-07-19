@@ -15,10 +15,11 @@ public class FoodServiceImpl implements FoodService {
     FoodMapper foodMapper;
 
     @Override
-    public DataResult selectFoodALl() {
+    public List<Food> selectFoodALl() {
+
         List<Food> foodList = foodMapper.selectFoodALl();
 
-        return new DataResult<List>(foodList);
+        return foodList;
     }
 
 }
