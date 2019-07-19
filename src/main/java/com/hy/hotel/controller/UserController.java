@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 public class UserController {
 
@@ -18,7 +20,7 @@ public class UserController {
      */
     @RequestMapping("/login")
     @ResponseBody
-    public String login (UserLogin userLogin) {
+    public String login (UserLogin userLogin, HttpServletResponse response) {
         // 登录
         boolean result = userService.login(userLogin);
         // 验证登录是否正确跳转页面
