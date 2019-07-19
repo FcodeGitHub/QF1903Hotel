@@ -15,14 +15,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(UserLogin userLogin) {
-
-        int result = userMapper.login(userLogin);
-        return result > 0 ? true:false;
+        return userMapper.login(userLogin) > 0 ? true : false;
     }
 
     @Override
-    public boolean register(UserLogin userLogin) {
-        int result = userMapper.register(userLogin);
-        return result > 0 ? true:false;
+    public boolean updatePassword(UserLogin userLogin) {
+        return userMapper.updatePassword(userLogin) > 0 ? true : false;
+    }
+
+    @Override
+    public boolean insertUser(UserLogin userLogin) {
+        return userMapper.insertUser(userLogin) > 0 ? true : false;
     }
 }

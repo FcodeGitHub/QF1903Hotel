@@ -7,34 +7,55 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 public class UserController {
 
     @Autowired
     UserService userService;
 
+    /**
+     * 登录
+     */
     @RequestMapping("/login")
     @ResponseBody
-    public String login(UserLogin userLogin){
-
+    public String login (UserLogin userLogin, HttpServletResponse response) {
+        // 登录
         boolean result = userService.login(userLogin);
-        if (result){
-            return "success111";
-        }else {
+        // 验证登录是否正确跳转页面
+        if (result) {
+            return "success";
+        } else {
             return "fail";
         }
     }
 
-    @RequestMapping("/register")
+    /**
+     * 注册
+     */
+    @RequestMapping("/insertUser")
     @ResponseBody
-    public String register(UserLogin userLogin){
-
-
-        boolean result = userService.register(userLogin);
-        if (result){
+    public String insertUser(UserLogin userLogin) {
+        boolean result = userService.insertUser(userLogin);
+        if (result) {
             return "success";
-        }else {
-            return "false";
+        } else {
+            return "fail";
+        }
+    }
+
+    /**
+     * 修改密码
+     */
+    @RequestMapping("updatePassword")
+    @ResponseBody
+    public String updatePassword(UserLogin userLogin) {
+        boolean result = userService.updatePassword(userLogin);
+        if (result) {
+            return "success";
+        } else {
+            return "fail";
         }
     }
 }

@@ -6,7 +6,13 @@
     <select id="login" parameterType="UserLogin" resultType="int">
         select count(1) from user_login where account = #{account} and password = #{password}
     </select>
-    <insert id="register" parameterType="userLogin" >
-        insert into user_login values(null,#{account},#{password},#{phone});
+
+    <update id="updatePassword" parameterType="UserLogin">
+        update user_login set password = #{password} where phone = #{phone}
+    </update>
+
+    <insert id="insertUser" parameterType="UserLogin">
+        insert into user_login (account, password, phone)
+        values (#{account}, #{password}, #{phone})
     </insert>
 </mapper>
