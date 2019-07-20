@@ -11,6 +11,10 @@ public class UserComment {
 
     private String nickName;
 
+    private String time;
+
+    private String reply;
+
     public UserComment() {
     }
 
@@ -54,6 +58,22 @@ public class UserComment {
         this.nickName = nickName;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getReply() {
+        return reply;
+    }
+
+    public void setReply(String reply) {
+        this.reply = reply;
+    }
+
     @Override
     public String toString() {
         return "UserComment{" +
@@ -62,6 +82,8 @@ public class UserComment {
                 ", img='" + img + '\'' +
                 ", userImg='" + userImg + '\'' +
                 ", nickName='" + nickName + '\'' +
+                ", time='" + time + '\'' +
+                ", reply='" + reply + '\'' +
                 '}';
     }
 }
