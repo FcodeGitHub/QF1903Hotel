@@ -21,7 +21,7 @@ public interface FoodMapper {
     /**
      * 查询体验内容
      */
-    FoodExperience selectFoodExperience(Integer foodExprienceId);
+    FoodExperience selectFoodExperience(Integer foodExperienceId);
 
     /**
      * 查询评论数
