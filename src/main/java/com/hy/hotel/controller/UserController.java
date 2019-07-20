@@ -58,7 +58,6 @@ public class UserController {
 
     /**
      * 个人页面展示
-     * @return
      */
     @RequestMapping("/PersonalCentre")
     @ResponseBody
@@ -66,9 +65,7 @@ public class UserController {
     public DataResult PersonalCentre(UserInfo userInfo, HttpServletResponse response){
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
-
         return userService.PersonalCentre(userInfo);
-
     }
 
 }

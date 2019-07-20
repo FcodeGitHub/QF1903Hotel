@@ -24,4 +24,16 @@
     <select id="selectUserByPhone" parameterType="String" resultType="UserLogin">
         select id,account,phone from user_login where phone = #{phone}
     </select>
+
+    <!--个人页面数据插入-->
+    <insert id="inserPersonal" parameterType="UserInfo">
+        insert into userinfo(nickName,phone,city,email,QQ)
+        values (#{nickName},#{phone},#{city},#{email},#{QQ})
+    </insert>
+
+    <!--数据查询-->
+    <select id="selectPersonal" parameterType="String" resultType="UserInfo">
+        select nickName, phone, city, email from userinfo where adress=#{adress}
+    </select>
+
 </mapper>
