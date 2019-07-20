@@ -43,6 +43,6 @@
 
     <!--用户评论-->
     <select id="selectCommentAll" resultType="UserComment">
-        select uc.id,uc.comment,uc.img,u.userImg,u.nickName from user_comment uc,userinfo u where uc.userId = u.id
+        select uc.id,uc.comment,uc.img,uc.time,uc.reply,u.userImg,u.nickName from user_comment uc,userinfo u where uc.userId = u.id
     </select>
 </mapper>
