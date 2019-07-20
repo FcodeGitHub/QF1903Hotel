@@ -27,6 +27,10 @@ public class Food {
 
     private FoodExperience foodExperience;
 
+    private String sponsorInfo;
+
+    private String sponsorImg;
+
     public Food() {
     }
 
@@ -132,6 +136,22 @@ public class Food {
 
     public void setFoodExperience(FoodExperience foodExperience) {
         this.foodExperience = foodExperience;
+    }
+
+    public String getSponsorInfo() {
+        return sponsorInfo;
+    }
+
+    public void setSponsorInfo(String sponsorInfo) {
+        this.sponsorInfo = sponsorInfo;
+    }
+
+    public String getSponsorImg() {
+        return sponsorImg;
+    }
+
+    public void setSponsorImg(String sponsorImg) {
+        this.sponsorImg = sponsorImg;
     }
 
     @Override
