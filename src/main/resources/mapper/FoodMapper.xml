@@ -10,4 +10,8 @@
     <select id="selectFoodById" parameterType="int" resultType="Food">
         select * from food where id = #{id}
     </select>
+
+    <select id="selectFoodExperience" parameterType="int" resultType="foodExperience">
+        select * from foodExperience where id = #{foodExprienceId}
+    </select>
 </mapper>

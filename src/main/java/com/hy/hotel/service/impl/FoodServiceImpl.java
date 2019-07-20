@@ -1,7 +1,6 @@
 package com.hy.hotel.service.impl;
 
 import com.hy.hotel.mapper.FoodMapper;
-import com.hy.hotel.pojo.DataResult;
 import com.hy.hotel.pojo.Food;
 import com.hy.hotel.service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,10 @@ public class FoodServiceImpl implements FoodService {
 
     @Override
     public Food selectFoodById(int id) {
-        return foodMapper.selectFoodById(id);
+        Food food = foodMapper.selectFoodById(id);
+        System.out.println(food.getFoodExperienceId());
+        food.setFoodExperience(foodMapper.selectFoodExperience(food.getFoodExperienceId()));
+        return food;
     }
 
 }
