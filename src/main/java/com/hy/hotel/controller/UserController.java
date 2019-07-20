@@ -1,6 +1,7 @@
 package com.hy.hotel.controller;
 
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserComment;
 import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -75,4 +77,13 @@ public class UserController {
         return userService.isExist(phone);
     }
 
+    /**
+     * 用户评论
+     */
+    @RequestMapping("/selectCommentAll")
+    public List<UserComment> selectCommentAll(HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return userService.selectCommentAll();
+    }
 }

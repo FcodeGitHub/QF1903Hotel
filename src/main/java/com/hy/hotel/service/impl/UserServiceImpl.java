@@ -2,11 +2,14 @@ package com.hy.hotel.service.impl;
 
 import com.hy.hotel.mapper.UserMapper;
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserComment;
 import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -84,6 +87,11 @@ public class UserServiceImpl implements UserService {
             message = "手机号不正确";
         }
         return new DataResult<>(result,message,userLogin);
+    }
+
+    @Override
+    public List<UserComment> selectCommentAll() {
+        return userMapper.selectCommentAll();
     }
 
 
