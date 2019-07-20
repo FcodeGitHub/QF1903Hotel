@@ -6,4 +6,7 @@
     <select id="selectHomestayAll" resultType="Homestay">
         select * from homestay
     </select>
+    <select id="selectHotelBedId" parameterType="int" resultType="HotelBed">
+        select ho.*,h.name,h.img from homestay h, hotel_bed ho where h.id = #{id} and h.hotelBedId = ho.hotelId
+    </select>
 </mapper>
