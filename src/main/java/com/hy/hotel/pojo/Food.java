@@ -31,7 +31,17 @@ public class Food {
 
     private String sponsorImg;
 
+    private int commentNum;
+
     public Food() {
+    }
+
+    public int getCommentNum() {
+        return commentNum;
+    }
+
+    public void setCommentNum(int commentNum) {
+        this.commentNum = commentNum;
     }
 
     public Integer getId() {
@@ -170,6 +180,9 @@ public class Food {
                 ", name='" + name + '\'' +
                 ", foodExperienceId=" + foodExperienceId +
                 ", foodExperience=" + foodExperience +
+                ", sponsorInfo='" + sponsorInfo + '\'' +
+                ", sponsorImg='" + sponsorImg + '\'' +
+                ", commentNum=" + commentNum +
                 '}';
     }
 }
