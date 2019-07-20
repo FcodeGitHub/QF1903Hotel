@@ -3,8 +3,6 @@ package com.hy.hotel.pojo;
 public class UserComment {
     private Integer id;
 
-    private Integer userId;
-
     private String comment;
 
     private String img;
@@ -22,14 +20,6 @@ public class UserComment {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
     }
 
     public String getComment() {
@@ -68,7 +58,6 @@ public class UserComment {
     public String toString() {
         return "UserComment{" +
                 "id=" + id +
-                ", userId=" + userId +
                 ", comment='" + comment + '\'' +
                 ", img='" + img + '\'' +
                 ", userImg='" + userImg + '\'' +
