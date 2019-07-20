@@ -14,22 +14,11 @@ public class UserInfo {
 
     private String idCard;
 
-    private String adress;
-
-    private String city;
-
     private String email;
 
     private int gender;
 
-    private String bloodType;
-
     private String QQ;
-
-    private int loginId;
-
-    public UserInfo(){}
-
 
     public int getId() {
         return id;
@@ -79,22 +68,6 @@ public class UserInfo {
         this.idCard = idCard;
     }
 
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -111,28 +84,12 @@ public class UserInfo {
         this.gender = gender;
     }
 
-    public String getBloodType() {
-        return bloodType;
-    }
-
-    public void setBloodType(String bloodType) {
-        this.bloodType = bloodType;
-    }
-
     public String getQQ() {
         return QQ;
     }
 
     public void setQQ(String QQ) {
         this.QQ = QQ;
-    }
-
-    public int getLoginId() {
-        return loginId;
-    }
-
-    public void setLoginId(int loginId) {
-        this.loginId = loginId;
     }
 
     @Override
@@ -144,13 +101,9 @@ public class UserInfo {
                 ", phone='" + phone + '\'' +
                 ", birthday='" + birthday + '\'' +
                 ", idCard='" + idCard + '\'' +
-                ", adress='" + adress + '\'' +
-                ", city='" + city + '\'' +
                 ", email='" + email + '\'' +
                 ", gender=" + gender +
-                ", bloodType='" + bloodType + '\'' +
                 ", QQ='" + QQ + '\'' +
-                ", loginId=" + loginId +
                 '}';
     }
 }

@@ -65,14 +65,14 @@ public class UserServiceImpl implements UserService {
         //插入数据
         int result  = userMapper.inserPersonal(userInfo);
         //查询数据
-        UserInfo userInfo1 = userMapper.selectPersonal(userInfo.getAdress());
+        UserInfo userInfo1 = userMapper.selectPersonal(userInfo.getId());
         String message = null;
         if (result > 0) {
             message = "信息展示";
         } else {
             message = "展示失败";
         }
-        return new DataResult<>(result, message, userInfo);
+        return new DataResult<>(result, message, userInfo1);
     }
 
     @Override

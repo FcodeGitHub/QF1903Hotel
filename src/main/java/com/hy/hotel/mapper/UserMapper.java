@@ -41,7 +41,7 @@ public interface UserMapper {
     /**
      * 个人页面数据查询
      */
-    UserInfo selectPersonal(String adress);
+    UserInfo selectPersonal(int id);
 
     /**
      * 验证手机是否存在
@@ -52,4 +52,6 @@ public interface UserMapper {
      * 用户评论
      */
     List<UserComment> selectCommentAll();
+
+
 }
