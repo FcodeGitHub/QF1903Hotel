@@ -12,10 +12,10 @@ public interface UserService {
     /**
      * 修改密码
      */
-    boolean updatePassword(UserLogin userLogin);
+    DataResult updatePassword(UserLogin userLogin);
 
     /**
      * 注册
      */
-    boolean insertUser(UserLogin userLogin);
+    DataResult insertUser(UserLogin userLogin);
 }

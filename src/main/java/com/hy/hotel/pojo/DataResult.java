@@ -19,6 +19,10 @@ public class DataResult<T> {
         this.data = data;
     }
 
+    public DataResult(T data) {
+        this.data = data;
+    }
+
     public int getCode() {
         return code;
     }

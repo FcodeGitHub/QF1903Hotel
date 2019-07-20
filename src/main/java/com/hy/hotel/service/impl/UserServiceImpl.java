@@ -18,20 +18,39 @@ public class UserServiceImpl implements UserService {
     public DataResult login(UserLogin userLogin) {
         int result = userMapper.login(userLogin);
         UserLogin userLogin1 = userMapper.selectUserByAccount(userLogin.getAccount());
+        String message = null;
         if (result > 0) {
-            return new DataResult(result,"登陆成功",userLogin1);
+            message = "登录成功";
         } else {
-            return new DataResult(result,"登陆失败");
+            message = "登录失败";
         }
+        return new DataResult(result, message, userLogin1);
     }
 
     @Override
-    public boolean updatePassword(UserLogin userLogin) {
-        return userMapper.updatePassword(userLogin) > 0 ? true : false;
+    public DataResult updatePassword(UserLogin userLogin) {
+
+        int result = userMapper.updatePassword(userLogin);
+        UserLogin userLogin1 = userMapper.selectUserByPhone(userLogin.getPhone());
+        String message = null;
+        if (result > 0){
+            message = "修改密码成功";
+        }else {
+            message = "修改密码失败";
+        }
+        return new DataResult(result,message,userLogin1);
     }
 
     @Override
-    public boolean insertUser(UserLogin userLogin) {
-        return userMapper.insertUser(userLogin) > 0 ? true : false;
+    public DataResult insertUser(UserLogin userLogin) {
+        int result = userMapper.insertUser(userLogin);
+        UserLogin userLogin1 = userMapper.selectUserByAccount(userLogin.getAccount());
+        String message = null;
+        if (result > 0) {
+            message = "注册成功";
+        } else {
+            message = "注册失败";
+        }
+        return new DataResult(result, message, userLogin1);
     }
 }

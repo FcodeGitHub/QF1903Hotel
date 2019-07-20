@@ -24,4 +24,9 @@ public interface UserMapper {
      * 通过用户名查询
      */
     UserLogin selectUserByAccount(String account);
+
+    /**
+     * 通过手机号查询
+     */
+    UserLogin selectUserByPhone(String phone);
 }

@@ -19,4 +19,8 @@
     <select id="selectUserByAccount" parameterType="String" resultType="UserLogin">
         select id,account,phone from user_login where account = #{account}
     </select>
+
+    <select id="selectUserByPhone" parameterType="String" resultType="UserLogin">
+        select id,account,phone from user_login where phone = #{phone}
+    </select>
 </mapper>
