@@ -27,4 +27,8 @@ public interface UserService {
      */
     DataResult PersonalCentre(UserInfo userInfo);
 
+    /**
+     * 验证手机是否存在
+     */
+    DataResult isExist(String phone);
 }

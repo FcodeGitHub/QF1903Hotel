@@ -60,12 +60,19 @@ public class UserController {
      * 个人页面展示
      */
     @RequestMapping("/PersonalCentre")
-    @ResponseBody
     @ApiOperation(value="个人中心展示")
     public DataResult PersonalCentre(UserInfo userInfo, HttpServletResponse response){
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
         return userService.PersonalCentre(userInfo);
+    }
+
+    /**
+     * 验证手机是否存在
+     */
+    @RequestMapping("/isExist")
+    public DataResult isExist(String phone) {
+        return userService.isExist(phone);
     }
 
 }

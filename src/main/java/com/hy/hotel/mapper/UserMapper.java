@@ -40,4 +40,8 @@ public interface UserMapper {
      */
     UserInfo selectPersonal(String adress);
 
+    /**
+     * 验证手机是否存在
+     */
+    int isExist(String phone);
 }
