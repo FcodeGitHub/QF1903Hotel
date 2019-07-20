@@ -1,6 +1,7 @@
 package com.hy.hotel.controller;
 
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.Food;
 import com.hy.hotel.service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,5 +24,16 @@ public class FoodController {
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
         return foodService.selectFoodALl();
+    }
+
+    /**
+     * 通过id查询
+     */
+    @RequestMapping("/selectFoodById")
+    @ResponseBody
+    public Food selectFoodById(int id ,HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return foodService.selectFoodById(id);
     }
 }

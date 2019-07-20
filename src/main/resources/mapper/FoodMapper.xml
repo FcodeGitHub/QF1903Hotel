@@ -7,4 +7,7 @@
         select * from food
     </select>
 
+    <select id="selectFoodById" parameterType="int" resultType="Food">
+        select * from food where id = #{id}
+    </select>
 </mapper>

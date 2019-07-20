@@ -13,12 +13,20 @@ public class Food {
 
     private Float star;
 
-    private boolean sc;
+    private Byte sc;
+
+    private String remark;
+
+    private String activityDetails;
+
+    private String activityInclude;
+
+    private String address;
 
     public Food() {
     }
 
-    public Food(Integer id, String title, String info, Float price, String imgs, Float star, boolean sc) {
+    public Food(Integer id, String title, String info, Float price, String imgs, Float star, Byte sc, String remark, String activityDetails, String activityInclude, String address) {
         this.id = id;
         this.title = title;
         this.info = info;
@@ -26,14 +34,10 @@ public class Food {
         this.imgs = imgs;
         this.star = star;
         this.sc = sc;
-    }
-
-    public boolean isSc() {
-        return sc;
-    }
-
-    public void setSc(boolean sc) {
-        this.sc = sc;
+        this.remark = remark;
+        this.activityDetails = activityDetails;
+        this.activityInclude = activityInclude;
+        this.address = address;
     }
 
     public Integer getId() {
@@ -84,6 +88,46 @@ public class Food {
         this.star = star;
     }
 
+    public Byte getSc() {
+        return sc;
+    }
+
+    public void setSc(Byte sc) {
+        this.sc = sc;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getActivityDetails() {
+        return activityDetails;
+    }
+
+    public void setActivityDetails(String activityDetails) {
+        this.activityDetails = activityDetails;
+    }
+
+    public String getActivityInclude() {
+        return activityInclude;
+    }
+
+    public void setActivityInclude(String activityInclude) {
+        this.activityInclude = activityInclude;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Food{" +
@@ -94,6 +138,10 @@ public class Food {
                 ", imgs='" + imgs + '\'' +
                 ", star=" + star +
                 ", sc=" + sc +
+                ", remark='" + remark + '\'' +
+                ", activityDetails='" + activityDetails + '\'' +
+                ", activityInclude='" + activityInclude + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

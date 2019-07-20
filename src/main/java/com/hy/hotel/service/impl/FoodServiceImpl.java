@@ -21,4 +21,9 @@ public class FoodServiceImpl implements FoodService {
         return new DataResult<List>(foodList);
     }
 
+    @Override
+    public Food selectFoodById(int id) {
+        return foodMapper.selectFoodById(id);
+    }
+
 }
