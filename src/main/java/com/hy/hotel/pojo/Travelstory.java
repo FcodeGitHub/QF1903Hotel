@@ -19,11 +19,12 @@ public class Travelstory {
     private String img;
 
     private Integer accountId;
+    private String time;
 
     public Travelstory() {
     }
 
-    public Travelstory(Integer id, String traveladdress, String addressinfo, String account, Byte dianzan, Byte sc, String info, String img, Integer accountId) {
+    public Travelstory(String time,Integer id, String traveladdress, String addressinfo, String account, Byte dianzan, Byte sc, String info, String img, Integer accountId) {
         this.id = id;
         this.traveladdress = traveladdress;
         this.addressinfo = addressinfo;
@@ -33,6 +34,7 @@ public class Travelstory {
         this.info = info;
         this.img = img;
         this.accountId = accountId;
+        this.time = time;
     }
 
     public Integer getId() {
@@ -107,6 +109,14 @@ public class Travelstory {
         this.accountId = accountId;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     @Override
     public String toString() {
         return "Travelstory{" +
@@ -119,6 +129,7 @@ public class Travelstory {
                 ", info='" + info + '\'' +
                 ", img='" + img + '\'' +
                 ", accountId=" + accountId +
+                ", time='" + time + '\'' +
                 '}';
     }
 }
