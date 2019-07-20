@@ -7,4 +7,7 @@ import java.util.List;
 public interface TravelStoryService {
 
     public List<Travelstory> travelStory();
+
+
+    Travelstory travelstoryId(int id);
 }
