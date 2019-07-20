@@ -2,11 +2,14 @@ package com.hy.hotel.service.impl;
 
 import com.hy.hotel.mapper.UserMapper;
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserComment;
 import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -25,7 +28,7 @@ public class UserServiceImpl implements UserService {
         } else {
             message = "登录失败";
         }
-        return new DataResult(result, message, userLogin1);
+        return new DataResult<>(result, message, userLogin1);
     }
 
     @Override
@@ -40,7 +43,7 @@ public class UserServiceImpl implements UserService {
         }else {
             message = "修改密码失败";
         }
-        return new DataResult(result,message,userLogin1);
+        return new DataResult<>(result,message,userLogin1);
     }
 
     @Override
@@ -53,7 +56,7 @@ public class UserServiceImpl implements UserService {
         } else {
             message = "注册失败";
         }
-        return new DataResult(result, message, userLogin1);
+        return new DataResult<>(result, message, userLogin1);
     }
 
     //个人详情页
@@ -69,7 +72,26 @@ public class UserServiceImpl implements UserService {
         } else {
             message = "展示失败";
         }
-        return new DataResult(result, message, userInfo);
+        return new DataResult<>(result, message, userInfo);
+    }
+
+    @Override
+    public DataResult isExist(String phone) {
+        int result = userMapper.isExist(phone);
+        String message = null;
+        UserLogin userLogin = null;
+        if (result > 0) {
+            message = "手机号正确";
+            userLogin = userMapper.selectUserByPhone(phone);
+        } else {
+            message = "手机号不正确";
+        }
+        return new DataResult<>(result,message,userLogin);
+    }
+
+    @Override
+    public List<UserComment> selectCommentAll() {
+        return userMapper.selectCommentAll();
     }
 
 

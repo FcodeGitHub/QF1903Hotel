@@ -1,17 +1,17 @@
 package com.hy.hotel.controller;
 
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserComment;
 import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -60,7 +60,6 @@ public class UserController {
      * 个人页面展示
      */
     @RequestMapping("/PersonalCentre")
-    @ResponseBody
     @ApiOperation(value="个人中心展示")
     public DataResult PersonalCentre(UserInfo userInfo, HttpServletResponse response){
         //解决跨域问题
@@ -68,4 +67,23 @@ public class UserController {
         return userService.PersonalCentre(userInfo);
     }
 
+    /**
+     * 验证手机是否存在
+     */
+    @RequestMapping("/isExist")
+    public DataResult isExist(String phone,HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return userService.isExist(phone);
+    }
+
+    /**
+     * 用户评论
+     */
+    @RequestMapping("/selectCommentAll")
+    public List<UserComment> selectCommentAll(HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return userService.selectCommentAll();
+    }
 }

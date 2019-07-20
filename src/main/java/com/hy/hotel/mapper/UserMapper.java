@@ -1,8 +1,11 @@
 package com.hy.hotel.mapper;
 
+import com.hy.hotel.pojo.UserComment;
 import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
@@ -40,4 +43,13 @@ public interface UserMapper {
      */
     UserInfo selectPersonal(String adress);
 
+    /**
+     * 验证手机是否存在
+     */
+    int isExist(String phone);
+
+    /**
+     * 用户评论
+     */
+    List<UserComment> selectCommentAll();
 }

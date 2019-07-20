@@ -1,8 +1,11 @@
 package com.hy.hotel.service;
 
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserComment;
 import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
+
+import java.util.List;
 
 public interface UserService {
 
@@ -27,4 +30,13 @@ public interface UserService {
      */
     DataResult PersonalCentre(UserInfo userInfo);
 
+    /**
+     * 验证手机是否存在
+     */
+    DataResult isExist(String phone);
+
+    /**
+     * 用户评论
+     */
+    List<UserComment> selectCommentAll();
 }

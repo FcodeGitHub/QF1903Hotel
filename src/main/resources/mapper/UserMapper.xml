@@ -36,4 +36,13 @@
         select nickName, phone, city, email from userinfo where adress=#{adress}
     </select>
 
+    <!--手机是否存在-->
+    <select id="isExist" resultType="int">
+        select count(1) from user_login where phone = #{phone}
+    </select>
+
+    <!--用户评论-->
+    <select id="selectCommentAll" resultType="UserComment">
+        select uc.id,uc.comment,uc.img,u.userImg,u.nickName from user_comment uc,userinfo u where uc.userId = u.id
+    </select>
 </mapper>
