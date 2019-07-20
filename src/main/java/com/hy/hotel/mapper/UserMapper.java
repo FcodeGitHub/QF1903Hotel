@@ -1,5 +1,6 @@
 package com.hy.hotel.mapper;
 
+import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -24,4 +25,12 @@ public interface UserMapper {
      * 通过用户名查询
      */
     UserLogin selectUserByAccount(String account);
+
+
+
+    /**
+     * 个人页面展示
+     */
+    int inserPersonal(UserInfo userInfo);
+
 }

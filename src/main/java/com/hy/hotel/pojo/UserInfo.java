@@ -30,21 +30,6 @@ public class UserInfo {
 
     public UserInfo(){}
 
-    public UserInfo(int id, String nickName, String userlmg, String phone, String birthday, String idCard, String adress, String city, String email, int gender, String bloodType, String QQ, int loginId) {
-        this.id = id;
-        this.nickName = nickName;
-        this.userlmg = userlmg;
-        this.phone = phone;
-        this.birthday = birthday;
-        this.idCard = idCard;
-        this.adress = adress;
-        this.city = city;
-        this.email = email;
-        this.gender = gender;
-        this.bloodType = bloodType;
-        this.QQ = QQ;
-        this.loginId = loginId;
-    }
 
     public int getId() {
         return id;

@@ -19,4 +19,11 @@
     <select id="selectUserByAccount" parameterType="String" resultType="UserLogin">
         select id,account,phone from user_login where account = #{account}
     </select>
+
+    <!--个人中心-->
+    <insert id="inserPersonal" parameterType="userInfo">
+        insert into userinfo(nickName, birthday, phone, adress, city, email,gender, bloodType,QQ)
+        values(#{nickName}, #{birthday}, #{phone}, #{adress}, #{city},#{email},#{gender}, #{bloodType},#{QQ})
+    </insert>
+
 </mapper>

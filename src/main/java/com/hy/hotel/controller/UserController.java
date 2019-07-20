@@ -1,6 +1,7 @@
 package com.hy.hotel.controller;
 
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class UserController {
     public DataResult insertUser(UserLogin userLogin,HttpServletResponse response) {
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
+
         return userService.insertUser(userLogin);
     }
 
@@ -57,4 +59,23 @@ public class UserController {
             return "fail";
         }
     }
+
+
+    /**
+     * 个人页面展示
+     * @return
+     */
+    @RequestMapping("/PersonalCentre")
+    @ResponseBody
+    public String PersonalCentre(UserInfo userInfo, HttpServletResponse response){
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        boolean result = userService.PersonalCentre(userInfo);
+        if (result) {
+            return "success";
+        } else {
+            return "fail";
+        }
+    }
+
 }

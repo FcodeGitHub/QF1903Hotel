@@ -2,6 +2,7 @@ package com.hy.hotel.service.impl;
 
 import com.hy.hotel.mapper.UserMapper;
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,4 +45,18 @@ public class UserServiceImpl implements UserService {
         }
         return new DataResult(result, message, userLogin1);
     }
+
+    //个人详情页
+    @Override
+    public boolean PersonalCentre(UserInfo userInfo) {
+
+        int result = userMapper.inserPersonal(userInfo);
+        if (result>0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 }
