@@ -2,6 +2,7 @@ package com.hy.hotel.service.impl;
 
 import com.hy.hotel.mapper.UserMapper;
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class UserServiceImpl implements UserService {
     public DataResult updatePassword(UserLogin userLogin) {
 
         int result = userMapper.updatePassword(userLogin);
+
         UserLogin userLogin1 = userMapper.selectUserByPhone(userLogin.getPhone());
         String message = null;
         if (result > 0){
@@ -53,4 +55,22 @@ public class UserServiceImpl implements UserService {
         }
         return new DataResult(result, message, userLogin1);
     }
+
+    //个人详情页
+    @Override
+    public DataResult PersonalCentre(UserInfo userInfo) {
+        //插入数据
+        int result  = userMapper.inserPersonal(userInfo);
+        //查询数据
+        UserInfo userInfo1 = userMapper.selectPersonal(userInfo.getAdress());
+        String message = null;
+        if (result > 0) {
+            message = "信息展示";
+        } else {
+            message = "展示失败";
+        }
+        return new DataResult(result, message, userInfo);
+    }
+
+
 }
