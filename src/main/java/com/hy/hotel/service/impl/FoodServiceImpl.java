@@ -15,9 +15,7 @@ public class FoodServiceImpl implements FoodService {
 
     @Override
     public List<Food> selectFoodALl() {
-
         List<Food> foodList = foodMapper.selectFoodALl();
-
         return foodList;
     }
 
