@@ -22,8 +22,8 @@ public class FoodServiceImpl implements FoodService {
     @Override
     public Food selectFoodById(int id) {
         Food food = foodMapper.selectFoodById(id);
-        System.out.println(food.getFoodExperienceId());
         food.setFoodExperience(foodMapper.selectFoodExperience(food.getFoodExperienceId()));
+        food.setCommentNum(foodMapper.selectCommentNum());
         return food;
     }
 

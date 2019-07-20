@@ -1,8 +1,10 @@
 package com.hy.hotel.controller;
 
 import com.hy.hotel.pojo.DataResult;
+import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +38,7 @@ public class UserController {
     public DataResult insertUser(UserLogin userLogin,HttpServletResponse response) {
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
+
         return userService.insertUser(userLogin);
     }
 
@@ -51,4 +54,21 @@ public class UserController {
         return userService.updatePassword(userLogin);
 
     }
+
+
+    /**
+     * 个人页面展示
+     * @return
+     */
+    @RequestMapping("/PersonalCentre")
+    @ResponseBody
+    @ApiOperation(value="个人中心展示")
+    public DataResult PersonalCentre(UserInfo userInfo, HttpServletResponse response){
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
+        return userService.PersonalCentre(userInfo);
+
+    }
+
 }

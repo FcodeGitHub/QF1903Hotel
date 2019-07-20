@@ -5,23 +5,25 @@ import java.util.Date;
 public class Homestay {
     private Integer id;
 
-    private String staycity;
+    private String stayCity;
 
-    private Date begintime;
+    private String name;
 
-    private Date leavetime;
+    private Integer num;
 
-    private String homestayname;
+    private String address;
+
+    private Double price;
+
+    private String img;
+
+    private Float dis;
+
+    private String search;
+
+    private String history;
 
     public Homestay() {
-    }
-
-    public Homestay(Integer id, String staycity, Date begintime, Date leavetime, String homestayname) {
-        this.id = id;
-        this.staycity = staycity;
-        this.begintime = begintime;
-        this.leavetime = leavetime;
-        this.homestayname = homestayname;
     }
 
     public Integer getId() {
@@ -32,46 +34,91 @@ public class Homestay {
         this.id = id;
     }
 
-    public String getStaycity() {
-        return staycity;
+    public String getStayCity() {
+        return stayCity;
     }
 
-    public void setStaycity(String staycity) {
-        this.staycity = staycity;
+    public void setStayCity(String stayCity) {
+        this.stayCity = stayCity;
     }
 
-    public Date getBegintime() {
-        return begintime;
+    public String getName() {
+        return name;
     }
 
-    public void setBegintime(Date begintime) {
-        this.begintime = begintime;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Date getLeavetime() {
-        return leavetime;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setLeavetime(Date leavetime) {
-        this.leavetime = leavetime;
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
-    public String getHomestayname() {
-        return homestayname;
+    public String getAddress() {
+        return address;
     }
 
-    public void setHomestayname(String homestayname) {
-        this.homestayname = homestayname;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public Float getDis() {
+        return dis;
+    }
+
+    public void setDis(Float dis) {
+        this.dis = dis;
+    }
+
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
+    }
+
+    public String getHistory() {
+        return history;
+    }
+
+    public void setHistory(String history) {
+        this.history = history;
     }
 
     @Override
     public String toString() {
         return "Homestay{" +
                 "id=" + id +
-                ", staycity='" + staycity + '\'' +
-                ", begintime=" + begintime +
-                ", leavetime=" + leavetime +
-                ", homestayname='" + homestayname + '\'' +
+                ", stayCity='" + stayCity + '\'' +
+                ", name='" + name + '\'' +
+                ", num=" + num +
+                ", address='" + address + '\'' +
+                ", price=" + price +
+                ", img='" + img + '\'' +
+                ", dis=" + dis +
+                ", search='" + search + '\'' +
+                ", history='" + history + '\'' +
                 '}';
     }
 }

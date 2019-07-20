@@ -1,5 +1,6 @@
 package com.hy.hotel.mapper;
 
+import com.hy.hotel.pojo.UserInfo;
 import com.hy.hotel.pojo.UserLogin;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -29,4 +30,14 @@ public interface UserMapper {
      * 通过手机号查询
      */
     UserLogin selectUserByPhone(String phone);
+
+    /**
+     * 个人页面数据插入
+     */
+    int inserPersonal(UserInfo userInfo);
+    /**
+     * 个人页面数据查询
+     */
+    UserInfo selectPersonal(String adress);
+
 }
