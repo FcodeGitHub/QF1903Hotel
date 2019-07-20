@@ -6,9 +6,7 @@ import com.hy.hotel.pojo.UserLogin;
 import com.hy.hotel.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
@@ -71,7 +69,9 @@ public class UserController {
      * 验证手机是否存在
      */
     @RequestMapping("/isExist")
-    public DataResult isExist(String phone) {
+    public DataResult isExist(String phone,HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
         return userService.isExist(phone);
     }
 
