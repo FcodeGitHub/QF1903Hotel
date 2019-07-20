@@ -13,31 +13,21 @@ public class Food {
 
     private Float star;
 
-    private Byte sc;
+    private boolean sc;
 
     private String remark;
 
-    private String activityDetails;
+    private String active;
 
-    private String activityInclude;
+    private String city;
 
-    private String address;
+    private String name;
+
+    private Integer foodExperienceId;
+
+    private FoodExperience foodExperience;
 
     public Food() {
-    }
-
-    public Food(Integer id, String title, String info, Float price, String imgs, Float star, Byte sc, String remark, String activityDetails, String activityInclude, String address) {
-        this.id = id;
-        this.title = title;
-        this.info = info;
-        this.price = price;
-        this.imgs = imgs;
-        this.star = star;
-        this.sc = sc;
-        this.remark = remark;
-        this.activityDetails = activityDetails;
-        this.activityInclude = activityInclude;
-        this.address = address;
     }
 
     public Integer getId() {
@@ -88,11 +78,11 @@ public class Food {
         this.star = star;
     }
 
-    public Byte getSc() {
+    public boolean isSc() {
         return sc;
     }
 
-    public void setSc(Byte sc) {
+    public void setSc(boolean sc) {
         this.sc = sc;
     }
 
@@ -104,28 +94,44 @@ public class Food {
         this.remark = remark;
     }
 
-    public String getActivityDetails() {
-        return activityDetails;
+    public String getActive() {
+        return active;
     }
 
-    public void setActivityDetails(String activityDetails) {
-        this.activityDetails = activityDetails;
+    public void setActive(String active) {
+        this.active = active;
     }
 
-    public String getActivityInclude() {
-        return activityInclude;
+    public String getCity() {
+        return city;
     }
 
-    public void setActivityInclude(String activityInclude) {
-        this.activityInclude = activityInclude;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getAddress() {
-        return address;
+    public String getName() {
+        return name;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getFoodExperienceId() {
+        return foodExperienceId;
+    }
+
+    public void setFoodExperienceId(Integer foodExperienceId) {
+        this.foodExperienceId = foodExperienceId;
+    }
+
+    public FoodExperience getFoodExperience() {
+        return foodExperience;
+    }
+
+    public void setFoodExperience(FoodExperience foodExperience) {
+        this.foodExperience = foodExperience;
     }
 
     @Override
@@ -139,9 +145,11 @@ public class Food {
                 ", star=" + star +
                 ", sc=" + sc +
                 ", remark='" + remark + '\'' +
-                ", activityDetails='" + activityDetails + '\'' +
-                ", activityInclude='" + activityInclude + '\'' +
-                ", address='" + address + '\'' +
+                ", active='" + active + '\'' +
+                ", city='" + city + '\'' +
+                ", name='" + name + '\'' +
+                ", foodExperienceId=" + foodExperienceId +
+                ", foodExperience=" + foodExperience +
                 '}';
     }
 }
