@@ -9,4 +9,7 @@ import java.util.List;
 public interface TravelStoryMapper {
 
     public List<Travelstory> travelStory();
+
+
+    Travelstory travelStoryId(int id);
 }

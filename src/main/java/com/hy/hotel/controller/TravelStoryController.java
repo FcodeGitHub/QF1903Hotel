@@ -24,4 +24,11 @@ public class TravelStoryController {
         return travelStoryService.travelStory();
     }
 
+    //查询
+    @RequestMapping("travelstoryId")
+    public Travelstory travelstoryId(HttpServletResponse response,int id){
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return travelStoryService.travelstoryId(id);
+    }
 }

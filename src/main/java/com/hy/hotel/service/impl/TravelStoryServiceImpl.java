@@ -20,4 +20,11 @@ public class TravelStoryServiceImpl implements TravelStoryService {
 
         return travelStoryMapper.travelStory();
     }
+
+    @Override
+    public Travelstory travelstoryId(int id) {
+        return travelStoryMapper.travelStoryId(id);
+    }
+
+
 }

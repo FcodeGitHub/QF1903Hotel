@@ -6,4 +6,8 @@
     <select id="travelStory" resultType="travelstory">
         select * from travelstory
     </select>
+    <!--查询ID-->
+    <select id="travelStoryId" resultType="travelstory" parameterType="int">
+        select * from travelstory where id = #{id}
+    </select>
 </mapper>
