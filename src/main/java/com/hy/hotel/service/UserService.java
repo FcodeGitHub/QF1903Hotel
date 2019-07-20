@@ -14,7 +14,7 @@ public interface UserService {
     /**
      * 修改密码
      */
-    boolean updatePassword(UserLogin userLogin);
+    DataResult updatePassword(UserLogin userLogin);
 
     /**
      * 注册
@@ -25,6 +25,6 @@ public interface UserService {
     /**
      * 个人页面展示
      */
-    boolean PersonalCentre(UserInfo userInfo);
+    DataResult PersonalCentre(UserInfo userInfo);
 
 }

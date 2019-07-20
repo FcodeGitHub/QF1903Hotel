@@ -26,11 +26,18 @@ public interface UserMapper {
      */
     UserLogin selectUserByAccount(String account);
 
-
+    /**
+     * 通过手机号查询
+     */
+    UserLogin selectUserByPhone(String phone);
 
     /**
-     * 个人页面展示
+     * 个人页面数据插入
      */
     int inserPersonal(UserInfo userInfo);
+    /**
+     * 个人页面数据查询
+     */
+    UserInfo selectPersonal(String adress);
 
 }
