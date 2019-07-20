@@ -23,6 +23,8 @@ public class Homestay {
 
     private String history;
 
+    private String text;
+
     public Homestay() {
     }
 
@@ -106,6 +108,14 @@ public class Homestay {
         this.history = history;
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
     @Override
     public String toString() {
         return "Homestay{" +
@@ -119,6 +129,7 @@ public class Homestay {
                 ", dis=" + dis +
                 ", search='" + search + '\'' +
                 ", history='" + history + '\'' +
+                ", text='" + text + '\'' +
                 '}';
     }
 }
