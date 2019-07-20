@@ -17,24 +17,19 @@ public class Travelstory {
     private String info;
 
     private String img;
-
+    private String stayCity;
     private Integer accountId;
     private String time;
 
     public Travelstory() {
     }
 
-    public Travelstory(String time,Integer id, String traveladdress, String addressinfo, String account, Byte dianzan, Byte sc, String info, String img, Integer accountId) {
-        this.id = id;
-        this.traveladdress = traveladdress;
-        this.addressinfo = addressinfo;
-        this.account = account;
-        this.dianzan = dianzan;
-        this.sc = sc;
-        this.info = info;
-        this.img = img;
-        this.accountId = accountId;
-        this.time = time;
+    public String getStayCity() {
+        return stayCity;
+    }
+
+    public void setStayCity(String stayCity) {
+        this.stayCity = stayCity;
     }
 
     public Integer getId() {
@@ -128,6 +123,7 @@ public class Travelstory {
                 ", sc=" + sc +
                 ", info='" + info + '\'' +
                 ", img='" + img + '\'' +
+                ", stayCity='" + stayCity + '\'' +
                 ", accountId=" + accountId +
                 ", time='" + time + '\'' +
                 '}';
