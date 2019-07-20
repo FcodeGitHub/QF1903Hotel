@@ -14,4 +14,8 @@
     <select id="selectFoodExperience" parameterType="int" resultType="foodExperience">
         select * from foodExperience where id = #{foodExprienceId}
     </select>
+
+    <select id="selectCommentNum" resultType="int">
+        select count(1) from food f,foodComment fc where fc.foodId = f.id
+    </select>
 </mapper>
