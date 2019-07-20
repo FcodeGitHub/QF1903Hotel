@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,9 @@ public class HomestayController {
      * 查询所有
      */
     @RequestMapping("/selectHomestayAll")
-    public List<Homestay> selectHomestayAll() {
+    public List<Homestay> selectHomestayAll(HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
         return homestayService.selectHomestayAll();
     }
 }
