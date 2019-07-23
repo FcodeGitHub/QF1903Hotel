@@ -15,7 +15,17 @@ public class UserAddress {
 
     private String num;
 
+    private String img;
+
     public UserAddress() {
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public Integer getId() {

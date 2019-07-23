@@ -74,7 +74,7 @@
         <selectKey keyColumn="id" keyProperty="id" order="AFTER" resultType="int">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into user_address values (null,#{account},#{name},#{phone},#{area},#{address},#{num})
+        insert into user_address values (null,#{account},#{name},#{phone},#{area},#{address},#{num},#{img})
     </insert>
 
     <!--通过id查询数据-->

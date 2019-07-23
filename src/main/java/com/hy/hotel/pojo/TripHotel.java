@@ -15,7 +15,17 @@ public class TripHotel {
 
     private String city;
 
+    private boolean sc;
+
     public TripHotel() {
+    }
+
+    public boolean isSc() {
+        return sc;
+    }
+
+    public void setSc(boolean sc) {
+        this.sc = sc;
     }
 
     public Integer getId() {
