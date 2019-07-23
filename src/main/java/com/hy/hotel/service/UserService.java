@@ -1,9 +1,6 @@
 package com.hy.hotel.service;
 
-import com.hy.hotel.pojo.DataResult;
-import com.hy.hotel.pojo.UserComment;
-import com.hy.hotel.pojo.UserInfo;
-import com.hy.hotel.pojo.UserLogin;
+import com.hy.hotel.pojo.*;
 
 import java.util.List;
 
@@ -39,4 +36,24 @@ public interface UserService {
      * 用户评论
      */
     List<UserComment> selectCommentAll();
+
+    /**
+     * 用户美食收藏
+     */
+    DataResult userFoodSc(int userId, int foodId);
+
+    /**
+     * 查询用户收藏
+     */
+    UserSc selectUserSc(int userId);
+
+    /**
+     * 用户旅行攻略收藏
+     */
+    DataResult userTraverStorySc(int userId, int travelstoryId);
+
+    /**
+     * 添加用户地址
+     */
+    DataResult insertUserAddress(UserAddress userAddress);
 }

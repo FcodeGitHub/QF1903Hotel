@@ -1,14 +1,12 @@
 package com.hy.hotel.controller;
 
-import com.hy.hotel.pojo.DataResult;
-import com.hy.hotel.pojo.UserComment;
-import com.hy.hotel.pojo.UserInfo;
-import com.hy.hotel.pojo.UserLogin;
+import com.hy.hotel.pojo.*;
 import com.hy.hotel.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sun.plugin.javascript.navig.LinkArray;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -85,5 +83,45 @@ public class UserController {
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
         return userService.selectCommentAll();
+    }
+
+    /**
+     * 用户美食收藏
+     */
+    @RequestMapping("/userFoodSc")
+    public DataResult userFoodSc(int userId,int foodId,HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return userService.userFoodSc(userId,foodId);
+    }
+
+    /**
+     * 用户旅行攻略收藏
+     */
+    @RequestMapping("/userTraverStorySc")
+    public DataResult userTraverStorySc(int userId,int travelstoryId,HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return userService.userTraverStorySc(userId,travelstoryId);
+    }
+
+    /**
+     * 查询用户收藏
+     */
+    @RequestMapping("/selectUserSc")
+    public UserSc selectUserSc(int userId,HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return userService.selectUserSc(userId);
+    }
+
+    /**
+     * 添加用户地址
+     */
+    @RequestMapping("insertUserAddress")
+    public DataResult insertUserAddress(UserAddress userAddress,HttpServletResponse response) {
+        //解决跨域问题
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        return userService.insertUserAddress(userAddress);
     }
 }

@@ -1,8 +1,6 @@
 package com.hy.hotel.mapper;
 
-import com.hy.hotel.pojo.UserComment;
-import com.hy.hotel.pojo.UserInfo;
-import com.hy.hotel.pojo.UserLogin;
+import com.hy.hotel.pojo.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -41,7 +39,7 @@ public interface UserMapper {
     /**
      * 个人页面数据查询
      */
-    UserInfo selectPersonal(String adress);
+    UserInfo selectPersonal(int id);
 
     /**
      * 验证手机是否存在
@@ -52,4 +50,34 @@ public interface UserMapper {
      * 用户评论
      */
     List<UserComment> selectCommentAll();
+
+    /**
+     * 用户美食收藏
+     */
+    int userFoodSc(UserSc userSc);
+
+    /**
+     *查询收藏
+     */
+    List<Integer> selectUserFoodSc(int userId);
+
+    /**
+     * 用户攻略收藏
+     */
+    int userTravestorySc(UserSc userSc);
+
+    /**
+     * 查询收藏
+     */
+    List<Integer> selectUserTravelstorySc(int userId);
+
+    /**
+     * 新增地址
+     */
+    int insertUserAddress(UserAddress userAddress);
+
+    /**
+     * 通过id查询数据
+     */
+    UserAddress selectUserAddressById(Integer id);
 }

@@ -27,13 +27,16 @@
 
     <!--个人页面数据插入-->
     <insert id="inserPersonal" parameterType="UserInfo">
+        <selectKey keyColumn="id" keyProperty="id" order="AFTER" resultType="int">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
         insert into userinfo(nickName,phone,city,email,QQ)
         values (#{nickName},#{phone},#{city},#{email},#{QQ})
     </insert>
 
     <!--数据查询-->
-    <select id="selectPersonal" parameterType="String" resultType="UserInfo">
-        select nickName, phone, city, email from userinfo where adress=#{adress}
+    <select id="selectPersonal" parameterType="int" resultType="UserInfo">
+        select id,nickName, phone, city, email from userinfo where id=#{id}
     </select>
 
     <!--手机是否存在-->
@@ -44,5 +47,38 @@
     <!--用户评论-->
     <select id="selectCommentAll" resultType="UserComment">
         select uc.id,uc.comment,uc.img,uc.time,uc.reply,u.userImg,u.nickName from user_comment uc,userinfo u where uc.userId = u.id
+    </select>
+
+    <!--用户美食收藏-->
+    <insert id="userFoodSc" parameterType="UserSc">
+        insert into user_food_sc (userId,foodId) values (#{userId},#{foodId})
+    </insert>
+
+    <!--用户旅游攻略收藏-->
+    <insert id="userTravestorySc" parameterType="UserSc">
+        insert into user_travelstory_sc (userId,travelstoryId) values (#{userId},#{travelstoryId})
+    </insert>
+
+    <!--查询收藏-->
+    <select id="selectUserFoodSc" parameterType="int" resultType="int">
+        select foodId from user_food_sc where userId = #{userId}
+    </select>
+
+    <!--查询收藏-->
+    <select id="selectUserTravelstorySc" parameterType="int" resultType="int">
+        select travelstoryId from user_travelstory_sc where userId = #{userId}
+    </select>
+
+    <!--新增用户地址-->
+    <insert id="insertUserAddress" parameterType="UserAddress">
+        <selectKey keyColumn="id" keyProperty="id" order="AFTER" resultType="int">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into user_address values (null,#{account},#{name},#{phone},#{area},#{address},#{num})
+    </insert>
+
+    <!--通过id查询数据-->
+    <select id="selectUserAddressById" parameterType="int" resultType="UserAddress">
+        select * from user_address where id = #{id}
     </select>
 </mapper>

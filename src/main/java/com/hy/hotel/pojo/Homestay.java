@@ -27,6 +27,8 @@ public class Homestay {
 
     private String time;
 
+    private boolean flag;
+
     public Homestay() {
     }
 
@@ -124,6 +126,14 @@ public class Homestay {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
     }
 
     @Override

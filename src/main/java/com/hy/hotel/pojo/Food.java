@@ -33,6 +33,10 @@ public class Food {
 
     private int commentNum;
 
+    private int readNum;
+
+    private String time;
+
     public Food() {
     }
 
@@ -162,6 +166,22 @@ public class Food {
 
     public void setSponsorImg(String sponsorImg) {
         this.sponsorImg = sponsorImg;
+    }
+
+    public int getReadNum() {
+        return readNum;
+    }
+
+    public void setReadNum(int readNum) {
+        this.readNum = readNum;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     @Override
