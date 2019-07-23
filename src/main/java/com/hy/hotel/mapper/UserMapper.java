@@ -80,4 +80,6 @@ public interface UserMapper {
      * 通过id查询数据
      */
     UserAddress selectUserAddressById(Integer id);
+
+
 }
