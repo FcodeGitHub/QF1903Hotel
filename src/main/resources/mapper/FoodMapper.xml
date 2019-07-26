@@ -13,11 +13,11 @@
     </select>
 
     <select id="selectFoodExperience" parameterType="int" resultType="foodExperience">
-        select * from foodExperience where id = #{foodExprienceId}
+        select * from foodexperience where id = #{foodExprienceId}
     </select>
 
 
     <select id="selectCommentNum" resultType="int">
-        select count(1) from food f,foodComment fc where fc.foodId = f.id
+        select count(1) from food f,foodcomment fc where fc.foodId = f.id
     </select>
 </mapper>
